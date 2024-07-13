@@ -9,15 +9,15 @@ wget --quiet --output-document - https://downloads.1password.com/linux/debian/de
 sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 wget --quiet --output-document - https://downloads.1password.com/linux/keys/1password.asc | sudo gpg --dearmor --yes --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 
-sudo apt update && sudo apt install 1password
+sudo apt update > /dev/null && sudo apt install 1password > /dev/null
 
 1password
 
 cd "$HOME"
 
-sudo apt --quiet install git > /dev/null
+sudo apt install git > /dev/null
 
-if ! git status > /dev/null; then
+if ! git sta    tus > /dev/null; then
     git init
     git remote add origin git@github.com:luism6n/home.git
     git fetch
