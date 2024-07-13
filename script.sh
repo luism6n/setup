@@ -11,7 +11,11 @@ wget --quiet --output-document - https://downloads.1password.com/linux/keys/1pas
 
 sudo apt-get update > /dev/null && sudo apt-get install 1password > /dev/null
 
-1password --silent > /dev/null
+pkill -e 1password
+1password > /dev/null
+pid=$!
+echo "close 1password or kill pid: $pid to continue" 
+wait $pid
 
 cd "$HOME"
 
