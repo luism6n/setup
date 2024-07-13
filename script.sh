@@ -12,3 +12,14 @@ wget --quiet --output-document - https://downloads.1password.com/linux/keys/1pas
 sudo apt update && sudo apt install 1password
 
 1password
+
+cd "$HOME"
+
+if ! git status > /dev/null; then
+    git init
+    git remote add origin git@github.com:luism6n/home.git
+    git fetch
+    git checkout master
+fi
+
+bash bin/setup.sh
