@@ -19,7 +19,7 @@ cd "$HOME"
 
 sudo apt-get install git > /dev/null
 
-if ! git sta    tus > /dev/null; then
+if ! git status > /dev/null; then
     git init
     git remote add origin git@github.com:luism6n/home.git
     git fetch
