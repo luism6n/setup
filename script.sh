@@ -18,8 +18,10 @@ fi
 1password --log error
 
 pid=$!
-echo "close 1password or kill pid: $pid to continue" 
+echo "press ctrl + c to kill 1password or kill pid: $pid to continue" 
 wait $pid
+
+1password --log error --silent
 
 cd "$HOME"
 
