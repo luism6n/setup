@@ -26,5 +26,6 @@ fi
 
 git fetch
 git checkout master
+git pull
 
 bash bin/setup.sh
