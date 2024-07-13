@@ -22,8 +22,9 @@ sudo apt-get install git > /dev/null
 if ! git status > /dev/null; then
     git init
     git remote add origin git@github.com:luism6n/home.git
-    git fetch
-    git checkout master
 fi
+
+git fetch
+git checkout master
 
 bash bin/setup.sh
