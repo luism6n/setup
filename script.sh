@@ -15,6 +15,8 @@ sudo apt update && sudo apt install 1password
 
 cd "$HOME"
 
+sudo apt --quiet install git > /dev/null
+
 if ! git status > /dev/null; then
     git init
     git remote add origin git@github.com:luism6n/home.git
