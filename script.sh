@@ -11,8 +11,11 @@ wget --quiet --output-document - https://downloads.1password.com/linux/keys/1pas
 
 sudo apt-get update > /dev/null && sudo apt-get install 1password > /dev/null
 
-pkill -e 1password || true
-1password --log error > /dev/null &
+if pgrep 1password > /dev/null; then
+    pkill -e 1password
+fi
+
+1password --silent --log error
 
 pid=$!
 echo "close 1password or kill pid: $pid to continue" 
