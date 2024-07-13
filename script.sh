@@ -11,9 +11,9 @@ wget --quiet --output-document - https://downloads.1password.com/linux/keys/1pas
 
 sudo apt-get update > /dev/null && sudo apt-get install 1password > /dev/null
 
-1password > /dev/null
+1password --silent > /dev/null
 
-1password --silent
+read -p "Press enter to continue"
 
 cd "$HOME"
 
