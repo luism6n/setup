@@ -15,7 +15,7 @@ if pgrep 1password > /dev/null; then
     pkill -e 1password
 fi
 
-1password --silent --log error
+1password --log error
 
 pid=$!
 echo "close 1password or kill pid: $pid to continue" 
