@@ -11,14 +11,9 @@ wget --quiet --output-document - https://downloads.1password.com/linux/keys/1pas
 
 sudo apt-get update > /dev/null && sudo apt-get install 1password > /dev/null
 
-if pgrep 1password > /dev/null; then
-    pkill -e 1password
-else
-    1password --log error
-
-    pid=$!
-    echo "press ctrl + c to kill 1password or kill pid: $pid to continue" 
-    wait $pid
+if ! pgrep 1password > /dev/null; then
+    echo "run 1password and run this script again to continue"
+    exit 1
 fi
 
 cd "$HOME"
