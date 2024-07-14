@@ -13,15 +13,13 @@ sudo apt-get update > /dev/null && sudo apt-get install 1password > /dev/null
 
 if pgrep 1password > /dev/null; then
     pkill -e 1password
+else
+    1password --log error
+
+    pid=$!
+    echo "press ctrl + c to kill 1password or kill pid: $pid to continue" 
+    wait $pid
 fi
-
-1password --log error
-
-pid=$!
-echo "press ctrl + c to kill 1password or kill pid: $pid to continue" 
-wait $pid
-
-1password --log error --silent
 
 cd "$HOME"
 
